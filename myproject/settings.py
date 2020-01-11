@@ -35,7 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls'
+
+    # Apps
+    'polls',
+    'posts',
+
+    # 3rd parties Apps
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -46,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -127,7 +134,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
-
 # Media files (Images, Docs)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediaroot')
+
+# Django Debug toolbar
+INTERNAL_IPS = [
+    '127.0.0.1',
+    'localhost'
+]
