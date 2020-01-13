@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     # Custom Middlewares
-    # 'myproject.middlewares.custom.Custom',
+    'myproject.middlewares.custom.CustomMiddleware',
 
     # django middlewares
     'django.middleware.security.SecurityMiddleware',
