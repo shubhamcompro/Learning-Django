@@ -134,3 +134,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
     'localhost'
 ]
+
+# Celery Configuration
+CELERY_BROKER_URL = 'redis://redis-12577.c98.us-east-1-4.ec2.cloud.redislabs.com:12577'
+CELERY_BROKER_PASSWORD = 'JohmSNfbA6fznfkL4THbSCBcXbiqBtRN'
