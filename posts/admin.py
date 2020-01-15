@@ -13,9 +13,8 @@ display_tags.short_description = 'Tags'
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'title', 'active', display_tags]
+    list_display = ['id', 'user', 'title', 'active', display_tags, 'created_at', 'updated_at']
     list_filter = ['active', 'tags']
-    fields = ['user', 'title', 'description', 'tags', 'active']
 
 
 # admin.site.register(Tag, TagAdmin)

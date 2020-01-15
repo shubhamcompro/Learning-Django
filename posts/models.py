@@ -14,12 +14,20 @@ class Tag(models.Model):
         default_related_name = 'tags'
 
 
+class PostManger(models.Manager):
+    pass
+
+
 class Post(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
-    active = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, blank=True, related_name='posts')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    objects = PostManger()
 
     def __str__(self):
         return self.title
