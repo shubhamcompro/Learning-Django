@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from .managers import PostManger
 
 
 class Tag(models.Model):
@@ -12,10 +13,6 @@ class Tag(models.Model):
 
     class Meta:
         default_related_name = 'tags'
-
-
-class PostManger(models.Manager):
-    pass
 
 
 class Post(models.Model):
